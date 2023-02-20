@@ -26,7 +26,7 @@ export const restore = () => {
     titAuth.classList.add("wrapper");
     remove.id = "remove";
 
-    title.textContent = element.title;
+    title.textContent = element.title +' by \u00A0';
     author.textContent = element.author;
     remove.textContent = "remove";
 
