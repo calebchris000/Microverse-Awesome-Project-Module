@@ -1,7 +1,8 @@
-let bookItems = document.querySelector(".bookItems");
-let form = document.querySelector("form");
-let contactWrapper = document.querySelector(".contactInfo");
+const bookItems = document.querySelector('.bookItems');
+const form = document.querySelector('form');
+const contactWrapper = document.querySelector('.contactInfo');
 
+/* eslint-disable import/prefer-default-export */
 export const contact = () => {
   contactWrapper.innerHTML = `
   <p>
@@ -16,7 +17,6 @@ export const contact = () => {
   </ul>
   `;
 
-  bookItems.style.display = "none";
-  form.style.display = "none";
-
+  bookItems.style.display = 'none';
+  form.style.display = 'none';
 };

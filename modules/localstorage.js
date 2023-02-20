@@ -1,22 +1,20 @@
-
-class LocalStorage {
+/* eslint-disable import/prefer-default-export */
+export class LocalStorage {
   constructor(data) {
-    this.data = data
+    this.data = data;
   }
 
-  saveData(data) {
-    let stringified = JSON.stringify(data)
+  saveData() {
+    const stringified = JSON.stringify(this.data);
     localStorage.setItem('data', stringified);
   }
 
-  getData(data) {
-    let parsed = JSON.parse(data);
+  getData() {
+    const parsed = JSON.parse(this.data);
     return parsed;
   }
 
   removeData() {
-    localStorage.removeItem(this.data)
+    localStorage.removeItem(this.data);
   }
 }
-
-export {LocalStorage}
