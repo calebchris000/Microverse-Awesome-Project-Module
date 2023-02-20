@@ -89,12 +89,11 @@ form button,
 
 .author {
   font-weight: 900;
-  margin-left: 10px;
 }
 
 .remove {
   height: fit-content;
-  margin: 10px 0;
+  
 }
 
 .hide {
