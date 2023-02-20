@@ -1,14 +1,18 @@
 import { Books } from "../modules/books.js";
 import { LocalStorage } from "./localstorage.js";
+
 let bookItems = document.querySelector(".bookItems");
+
 let newBook = new Books();
 let storeData = new LocalStorage(newBook.book);
+
 export const restore = () => {
   let data = localStorage.getItem("data");
 
   if (data === "" || data === "[]") {
     return;
   }
+
   let parsed = JSON.parse(data);
 
   parsed.forEach((element) => {
@@ -55,13 +59,13 @@ export const restore = () => {
         });
 
       });
+      
       localStorage.setItem("data", JSON.stringify(newBook.book));
       storeData.saveData(newBook.book);
 
       if (bookItems.innerHTML === "") {
         bookItems.style.border = "0 solid";
       }
-      
     });
   });
 };
