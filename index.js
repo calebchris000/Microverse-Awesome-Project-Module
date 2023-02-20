@@ -36,7 +36,7 @@ add.addEventListener("click", () => {
   titAuth.classList.add("wrapper");
   remove.id = "remove";
 
-  title.textContent = titleInput.value;
+  title.textContent = titleInput.value + ' by  \u00A0 ';
   author.textContent = authorInput.value;
   remove.textContent = "remove";
 
