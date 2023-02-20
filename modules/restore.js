@@ -26,7 +26,7 @@ export const restore = () => {
     titAuth.classList.add("wrapper");
     remove.id = "remove";
 
-    title.textContent = element.title +' by \u00A0';
+    title.textContent = element.title + " by \u00A0";
     author.textContent = element.author;
     remove.textContent = "remove";
 
@@ -34,6 +34,10 @@ export const restore = () => {
     titAuth.appendChild(author);
     collection.appendChild(titAuth);
     collection.appendChild(remove);
+
+    if (bookItems.innerHTML !== "") {
+      bookItems.style.border = "4px solid";
+    }
 
     remove.addEventListener("click", function () {
       newBook.book = [];
@@ -49,6 +53,7 @@ export const restore = () => {
           title: title.textContent,
           author: author.textContent,
         });
+
       });
       localStorage.setItem("data", JSON.stringify(newBook.book));
       storeData.saveData(newBook.book);
@@ -56,6 +61,7 @@ export const restore = () => {
       if (bookItems.innerHTML === "") {
         bookItems.style.border = "0 solid";
       }
+      
     });
   });
 };
