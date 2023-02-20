@@ -27,7 +27,6 @@ body {
 form {
   width: fit-content;
   margin: 0 auto;
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   display: none;
@@ -36,7 +35,7 @@ form {
 form input {
   height: 2rem;
   font-family: var(--comic-sans);
-  width: 300px
+  width: 300px;
 }
 
 form button,
@@ -50,9 +49,8 @@ form button,
 #remove {
   box-shadow: 3px 3px 0.1px rgb(40, 33, 33);
   background-color: #fff;
-  padding: 5px 20px;
+  padding: 1px 20px;
   border: 2px solid #000;
-  height: fit-content;
   margin-top: 8px;
 }
 
@@ -69,7 +67,7 @@ form button,
   justify-content: space-between;
   margin: 5px 20px;
   vertical-align: middle;
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 
 .collection:nth-child(odd) {
@@ -79,7 +77,6 @@ form button,
 .collection:nth-child(even) {
   background-color: var(--table-even);
 }
-
 
 .wrapper {
   display: flex;
@@ -99,11 +96,6 @@ form button,
 
 .author {
   font-weight: 900;
-}
-
-.remove {
-  height: fit-content;
-  
 }
 
 .hide {
@@ -126,14 +118,13 @@ form button,
   flex-wrap: wrap;
   justify-content: end;
   position: fixed;
-  right:0;
+  right: 0;
   margin-right: 16px;
   user-select: none;
   margin-top: 24px;
   margin-bottom: 24px;
   background-color: #fff;
 }
-
 
 @media screen and (max-height: 576px) {
   .copyright {

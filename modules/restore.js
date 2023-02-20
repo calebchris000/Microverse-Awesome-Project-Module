@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Books } from "../modules/books.js";
 import { LocalStorage } from "./localstorage.js";
 
@@ -8,63 +9,81 @@ let storeData = new LocalStorage(newBook.book);
 
 export const restore = () => {
   let data = localStorage.getItem("data");
+=======
+import { Books } from './books.js';
+import { LocalStorage } from './localstorage.js';
+>>>>>>> b6c6fb420dca12e15a16ea7d9f0869e693de3da4
 
-  if (data === "" || data === "[]") {
+const bookItems = document.querySelector('.bookItems');
+const newBook = new Books();
+const storeData = new LocalStorage(newBook.book);
+/* eslint-disable import/prefer-default-export */
+export const restore = () => {
+  const data = localStorage.getItem('data');
+
+  if (data === '' || data === '[]') {
     return;
   }
+<<<<<<< HEAD
 
   let parsed = JSON.parse(data);
+=======
+  const parsed = JSON.parse(data);
+>>>>>>> b6c6fb420dca12e15a16ea7d9f0869e693de3da4
 
   parsed.forEach((element) => {
-    let collection = document.createElement("div");
-    collection.classList.add("collection");
+    const collection = document.createElement('div');
+    collection.classList.add('collection');
     bookItems.appendChild(collection);
 
-    let title = document.createElement("p");
-    let author = document.createElement("p");
-    let titAuth = document.createElement("div");
-    let remove = document.createElement("button");
+    const title = document.createElement('p');
+    const author = document.createElement('p');
+    const titAuth = document.createElement('div');
+    const remove = document.createElement('button');
 
-    title.classList.add("title");
-    author.classList.add("author");
-    titAuth.classList.add("wrapper");
-    remove.id = "remove";
+    title.classList.add('title');
+    author.classList.add('author');
+    titAuth.classList.add('wrapper');
+    remove.id = 'remove';
 
-    title.textContent = element.title + " by \u00A0";
+    title.textContent = `${element.title} by \u00A0`;
     author.textContent = element.author;
-    remove.textContent = "remove";
+    remove.textContent = 'remove';
 
     titAuth.appendChild(title);
     titAuth.appendChild(author);
     collection.appendChild(titAuth);
     collection.appendChild(remove);
 
-    if (bookItems.innerHTML !== "") {
-      bookItems.style.border = "4px solid";
+    if (bookItems.innerHTML !== '') {
+      bookItems.style.border = '4px solid';
     }
 
-    remove.addEventListener("click", function () {
+    remove.addEventListener('click', () => {
       newBook.book = [];
       bookItems.removeChild(collection);
 
-      let allCollections = bookItems.querySelectorAll(".collection");
+      const allCollections = bookItems.querySelectorAll('.collection');
 
-      allCollections.forEach((item, index) => {
-        let title = item.querySelector(".title");
-        let author = item.querySelector(".author");
+      allCollections.forEach((item) => {
+        const title = item.querySelector('.title');
+        const author = item.querySelector('.author');
 
         newBook.addBook({
           title: title.textContent,
           author: author.textContent,
         });
-
       });
+<<<<<<< HEAD
       
       localStorage.setItem("data", JSON.stringify(newBook.book));
+=======
+      localStorage.setItem('data', JSON.stringify(newBook.book));
+>>>>>>> b6c6fb420dca12e15a16ea7d9f0869e693de3da4
       storeData.saveData(newBook.book);
 
-      if (bookItems.innerHTML === "") {
-        bookItems.style.border = "0 solid";
+      if (bookItems.innerHTML === '') {
+        bookItems.style.border = '0 solid';
       }
     });
   });
