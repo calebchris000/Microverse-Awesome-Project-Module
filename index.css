@@ -126,7 +126,8 @@ form button,
   flex-wrap: wrap;
   justify-content: end;
   position: fixed;
-  left: 15rem;
+  right:0;
+  margin-right: 16px;
   user-select: none;
   margin-top: 24px;
   margin-bottom: 24px;
