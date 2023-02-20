@@ -80,7 +80,7 @@ add.addEventListener("click", () => {
     add.textContent = 'Added'
 
     if (bookItems.innerHTML !== "") {
-      bookItems.style.border = "2px solid";
+      bookItems.style.border = "4px solid";
     }
 });
 
