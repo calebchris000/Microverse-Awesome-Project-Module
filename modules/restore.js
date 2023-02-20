@@ -1,18 +1,5 @@
-<<<<<<< HEAD
-import { Books } from "../modules/books.js";
-import { LocalStorage } from "./localstorage.js";
-
-let bookItems = document.querySelector(".bookItems");
-
-let newBook = new Books();
-let storeData = new LocalStorage(newBook.book);
-
-export const restore = () => {
-  let data = localStorage.getItem("data");
-=======
 import { Books } from './books.js';
 import { LocalStorage } from './localstorage.js';
->>>>>>> b6c6fb420dca12e15a16ea7d9f0869e693de3da4
 
 const bookItems = document.querySelector('.bookItems');
 const newBook = new Books();
@@ -24,12 +11,7 @@ export const restore = () => {
   if (data === '' || data === '[]') {
     return;
   }
-<<<<<<< HEAD
-
-  let parsed = JSON.parse(data);
-=======
   const parsed = JSON.parse(data);
->>>>>>> b6c6fb420dca12e15a16ea7d9f0869e693de3da4
 
   parsed.forEach((element) => {
     const collection = document.createElement('div');
@@ -74,12 +56,7 @@ export const restore = () => {
           author: author.textContent,
         });
       });
-<<<<<<< HEAD
-      
-      localStorage.setItem("data", JSON.stringify(newBook.book));
-=======
       localStorage.setItem('data', JSON.stringify(newBook.book));
->>>>>>> b6c6fb420dca12e15a16ea7d9f0869e693de3da4
       storeData.saveData(newBook.book);
 
       if (bookItems.innerHTML === '') {
