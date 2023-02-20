@@ -1,28 +1,12 @@
-const dateWrapper = document.querySelector('.date');
+import { DateTime } from './luxon-min.js';
 
-const monthNames = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
+const dateWrapper = document.querySelector('.date');
 
 /* eslint-disable import/prefer-default-export */
 export const countTime = () => {
   setInterval(() => {
-    const newDate = new Date();
-    const month = newDate.getMonth();
-    const day = newDate.getDay();
-    const year = newDate.getFullYear();
-    const time = `${newDate.toLocaleTimeString()}`;
-    dateWrapper.innerHTML = `${monthNames[month]} ${day + 12} ${year}, ${time}`;
+    const dt = DateTime.now();
+
+    dateWrapper.innerHTML = dt.toLocaleString(DateTime.DATETIME_MED);
   }, 1000);
 };
