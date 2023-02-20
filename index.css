@@ -9,6 +9,10 @@ body {
   font-family: var(--comic-sans);
 }
 
+.navigations {
+  z-index: 3;
+}
+
 .navigation-items {
   display: flex;
   flex-wrap: wrap;
@@ -87,6 +91,12 @@ form button,
   font-weight: 900;
 }
 
+.titleText {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
 .author {
   font-weight: 900;
 }
@@ -115,9 +125,12 @@ form button,
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
-  position: relative;
-  left: -16px;
+  position: fixed;
+  left: 15rem;
   user-select: none;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background-color: #fff;
 }
 
 
